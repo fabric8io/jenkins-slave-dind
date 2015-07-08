@@ -24,4 +24,5 @@ ADD start-jenkins-slave.sh /usr/bin/start-jenkins-slave.sh
 # Standard SSH port
 EXPOSE 22
 
+ENV DOCKER_DAEMON_ARGS="--insecure-registry=172.0.0.0/8 --insecure-registry=172.30.0.0/16 "
 CMD ["start-jenkins-slave.sh"]
