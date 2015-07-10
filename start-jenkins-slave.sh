@@ -14,10 +14,3 @@ nohup wrapdocker &
 #Start SSHD
 /usr/sbin/sshd -D
 
-# lets wait a little bit for docker
-sleep 5
-
-for imageTar in /images/*.tar; do
-  echo "Importing docker image ${imageTar}"
-  docker load -i ${imageTar}
-done

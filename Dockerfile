@@ -21,9 +21,6 @@ RUN echo "jenkins:jenkins" | chpasswd
 #Add startup script
 ADD start-jenkins-slave.sh /usr/bin/start-jenkins-slave.sh
 
-# Add the default images
-ADD images /images
-
 # Standard SSH port
 EXPOSE 22
 
