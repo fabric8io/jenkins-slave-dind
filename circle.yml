@@ -1,0 +1,21 @@
+machine:
+  services:
+    - docker
+
+branches:
+  ignore:
+    - builds
+
+test:
+  override:
+    - echo yes
+
+deployment:
+  hub:
+    branch: master
+    owner: fabric8io
+    commands:
+      - bash build.sh
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push fabric8/jenkins-slave-dind
+      
